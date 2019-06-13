@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://adusparx:adusparx@merncluster-rzfpa.mongodb.net/test?retryWrites=true",
-  "jwtSecret": "adusparx"
+  "jwtSecret": "adusparx",
+  "githubClientID": "f4c8be37027e4b9f9a35",
+  "githubClientSecret": "1870cfe02e279233d8b620efbead9ca742fc46fe"
 }
