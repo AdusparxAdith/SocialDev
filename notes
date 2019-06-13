@@ -1,0 +1,9 @@
+Auth route 
+    GET-  is used for authenticating a token that the client has(through registration or login) and returns user details
+    POST- used for logging in and provides a token as result, to authenticate in auth
+User is used for regestering a user and receiving a token as result, to authenticate in auth
+
+POST /api/users = register a user => token
+POST /api/auth = login a user => token
+
+GET /api/auth(token) = validate token => logged in user details
