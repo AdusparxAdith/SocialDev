@@ -7,3 +7,5 @@ POST /api/users = register a user => token
 POST /api/auth = login a user => token
 
 GET /api/auth(token) = validate token => logged in user details
+
+Add auth middleware to enable token expecting system that returns details
