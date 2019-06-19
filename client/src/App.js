@@ -5,6 +5,8 @@ import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/profile-forms/CreateProfile";
 import EditProfile from "./components/profile-forms/EditProfile";
+import AddExperience from "./components/profile-forms/AddExperience";
+import AddEducation from "./components/profile-forms/AddEducation";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
@@ -53,6 +55,18 @@ const App = () => {
                 exact
                 path="/edit-profile"
                 component={EditProfile}
+              />
+              <PrivateRoute
+                Route
+                exact
+                path="/add-experience"
+                component={AddExperience}
+              />
+              <PrivateRoute
+                Route
+                exact
+                path="/add-education"
+                component={AddEducation}
               />
             </Switch>
           </section>
