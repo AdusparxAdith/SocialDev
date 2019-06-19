@@ -47,7 +47,7 @@ export const getProfiles = () => async dispatch => {
 
 //Get profile by ID
 
-export const getProfileByID = userID => async dispatch => {
+export const getProfileById = userID => async dispatch => {
   dispatch({ type: CLEAR_PROFILE }); // Prevents flashing of the past user's profile
   try {
     const res = await axios.get(`/api/profile/user/${userID}`);
