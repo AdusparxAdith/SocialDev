@@ -3,11 +3,15 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
+import { addLike, removeLike } from "../../actions/post";
 
 const PostItem = ({
   auth,
+  addLike,
+  removeLike,
   post: { _id, text, name, avatar, user, likes, comments, date }
 }) => {
+  console.log(auth.user._id, likes[0].user);
   return (
     <div className="post bg-white p-1 my-1">
       <div>
@@ -21,11 +25,19 @@ const PostItem = ({
         <p className="post-date">
           Posted on <Moment format="DD/MM/YYYY">{date}</Moment>
         </p>
-        <button type="button" className="btn btn-light">
+        <button
+          onClick={e => addLike(_id)}
+          type="button"
+          className="btn btn-light"
+        >
           <i className="fas fa-thumbs-up" />{" "}
           {likes.length > 0 && <span>{likes.length}</span>}
         </button>
-        <button type="button" className="btn btn-light">
+        <button
+          onClick={e => removeLike(_id)}
+          type="button"
+          className="btn btn-light"
+        >
           <i className="fas fa-thumbs-down" />
         </button>
         <Link to={`/post/${_id}`} className="btn btn-primary">
@@ -46,7 +58,9 @@ const PostItem = ({
 
 PostItem.propTypes = {
   post: PropTypes.object.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  addLike: PropTypes.func.isRequired,
+  removeLike: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -55,5 +69,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  {}
+  { addLike, removeLike }
 )(PostItem);
