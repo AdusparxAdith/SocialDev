@@ -575,3 +575,7 @@ button {
     padding: 0.3rem 0.4rem;
   }
 }
+
+.btn-press {
+  color: #5cb5c7;
+}
