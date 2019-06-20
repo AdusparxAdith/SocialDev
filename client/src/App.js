@@ -13,6 +13,7 @@ import PrivateRoute from "./components/routing/PrivateRoute";
 import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
 import Posts from "./components/posts/Posts";
+import Post from "./components/post/Post";
 import Register from "./components/auth/Register";
 import Alert from "./components/layout/Alert";
 
@@ -74,6 +75,7 @@ const App = () => {
                 component={AddEducation}
               />
               <PrivateRoute Route exact path="/posts" component={Posts} />
+              <PrivateRoute Route exact path="/posts/:id" component={Post} />
             </Switch>
           </section>
         </Fragment>
