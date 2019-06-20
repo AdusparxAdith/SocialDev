@@ -216,7 +216,7 @@ router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
       return res.status(401).json({ msg: "User not authorized" });
     }
 
-    const removeIndex = post.likes
+    const removeIndex = post.comments
       .map(comment => comment.user.toString())
       .indexOf(req.user.id);
 
@@ -249,4 +249,18 @@ router.put("/comment/:id/:comment_id", auth, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+
+// //@route Get api/posts/comment/:id
+// //@desc Get Comments
+// //@access Private
+// router.get("/comment/:id/", auth, async (req, res) => {
+//   try {
+//     const post = await Post.findById(req.params.id);
+
+//     res.json(post.comments);
+//   } catch (error) {
+//     console.error(error.message);
+//     res.status(500).send("Server Error");
+//   }
+// });
 module.exports = router;

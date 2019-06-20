@@ -10,6 +10,7 @@ const PostItem = ({
   addLike,
   removeLike,
   deletePost,
+  loading,
   post: { _id, text, name, avatar, user, likes, comments, date },
   showActions
 }) => {
@@ -32,8 +33,12 @@ const PostItem = ({
               onClick={e => addLike(_id)}
               type="button"
               // className={
-              //   currentUser === likedUser ? "btn btn-press" : "btn btn-light"
+              //   loading &&
+              //   (auth.user._id === likes[0].user
+              //     ? "btn btn-light"
+              //     : "btn btn-press")
               // }
+
               className="btn btn-light"
             >
               <i className="fas fa-thumbs-up" />{" "}
@@ -81,7 +86,8 @@ PostItem.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  loading: state.post.loading
 });
 
 export default connect(
