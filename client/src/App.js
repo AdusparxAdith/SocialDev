@@ -12,6 +12,7 @@ import Profile from "./components/profile/Profile";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
+import Posts from "./components/posts/Posts";
 import Register from "./components/auth/Register";
 import Alert from "./components/layout/Alert";
 
@@ -72,6 +73,7 @@ const App = () => {
                 path="/add-education"
                 component={AddEducation}
               />
+              <PrivateRoute Route exact path="/posts" component={Posts} />
             </Switch>
           </section>
         </Fragment>
