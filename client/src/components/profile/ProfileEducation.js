@@ -22,6 +22,6 @@ const ProfileEducation = ({
     </p>
   </div>
 );
-ProfileEducation.propTypes = { education: PropTypes.array.isRequired };
+ProfileEducation.propTypes = { education: PropTypes.object.isRequired };
 
 export default ProfileEducation;
