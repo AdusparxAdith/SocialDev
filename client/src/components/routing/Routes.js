@@ -12,6 +12,7 @@ import PrivateRoute from "../routing/PrivateRoute";
 import Login from "../auth/Login";
 import Posts from "../posts/Posts";
 import Post from "../post/Post";
+import Inbox from "../inbox/Inbox";
 import Register from "../auth/Register";
 import Alert from "../layout/Alert";
 
@@ -50,6 +51,7 @@ const Routes = () => {
           component={AddEducation}
         />
         <PrivateRoute Route exact path="/posts" component={Posts} />
+        <PrivateRoute Route exact path="/inbox" component={Inbox} />
         <PrivateRoute Route exact path="/posts/:id" component={Post} />
         <Route component={NotFound} />
       </Switch>
