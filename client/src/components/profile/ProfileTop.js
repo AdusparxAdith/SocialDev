@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import SendMessage from "../inbox/SendMessage";
 
 const ProfileTop = ({
   profile: {
@@ -8,7 +9,7 @@ const ProfileTop = ({
     location,
     website,
     social,
-    user: { name, avatar }
+    user: { _id, name, avatar }
   }
 }) => {
   return (
@@ -51,6 +52,7 @@ const ProfileTop = ({
           </a>
         )}
       </div>
+      <SendMessage userId={_id} name={name} />
     </div>
   );
 };

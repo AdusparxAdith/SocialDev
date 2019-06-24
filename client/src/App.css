@@ -137,6 +137,8 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+
+  text-align: center;
 }
 
 .badge {
@@ -578,4 +580,21 @@ button {
 
 .btn-press {
   color: #5cb5c7;
+}
+
+.message {
+  background: #f4f5f4;
+  padding: 2%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.message span {
+  color: #18a2bd;
+  font-weight: bold;
+}
+
+.messageOptions {
+  align-self: flex-end;
 }

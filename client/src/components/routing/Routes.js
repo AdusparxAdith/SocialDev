@@ -15,6 +15,7 @@ import Post from "../post/Post";
 import Inbox from "../inbox/Inbox";
 import Register from "../auth/Register";
 import Alert from "../layout/Alert";
+import MessageForm from "../inbox/MessageForm";
 
 const Routes = () => {
   return (
@@ -49,6 +50,12 @@ const Routes = () => {
           exact
           path="/add-education"
           component={AddEducation}
+        />
+        <PrivateRoute
+          Route
+          exact
+          path="/create-message/:id/:name"
+          component={MessageForm}
         />
         <PrivateRoute Route exact path="/posts" component={Posts} />
         <PrivateRoute Route exact path="/inbox" component={Inbox} />

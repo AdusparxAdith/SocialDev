@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import SendMessage from "../inbox/SendMessage";
 
 const ProfileItem = ({
   profile: {
@@ -20,9 +21,12 @@ const ProfileItem = ({
           {status} {company && <span>at {company}</span>}
         </p>
         <p className="my-1">{location && <span>{location}</span>}</p>
-        <Link to={`/profile/${_id}`} className="btn btn-primary">
-          View Profile
-        </Link>
+        <div style={{ display: "flex" }}>
+          <Link to={`/profile/${_id}`} className="btn btn-primary">
+            View Profile
+          </Link>
+          <SendMessage userId={_id} name={name} />
+        </div>
       </div>
       <ul>
         {skills.slice(0, 4).map((skill, index) => (
