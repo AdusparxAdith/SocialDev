@@ -7,6 +7,7 @@ const MessageForm = ({ match, sendMessage }) => {
   const [formData, setformData] = useState("");
   const userId = match.params.id;
   const name = match.params.name;
+
   return (
     <div className="post-form">
       <div className="bg-primary p">

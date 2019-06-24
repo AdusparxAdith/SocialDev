@@ -54,7 +54,7 @@ const Routes = () => {
         <PrivateRoute
           Route
           exact
-          path="/create-message/:id/:name"
+          path="/create-message/:id/:name/:context"
           component={MessageForm}
         />
         <PrivateRoute Route exact path="/posts" component={Posts} />

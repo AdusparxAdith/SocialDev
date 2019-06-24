@@ -17,7 +17,12 @@ const MessageItem = ({ message: { date, text, from, name } }) => {
         </div>
 
         <div className="messageOptions">
-          <SendMessage userId={from} name={name} />
+          <SendMessage
+            context={text}
+            text={"Reply"}
+            userId={from}
+            name={name}
+          />
         </div>
       </div>
     </div>
